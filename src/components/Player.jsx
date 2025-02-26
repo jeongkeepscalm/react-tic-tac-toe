@@ -6,7 +6,7 @@ import PlayerButton from "./PlayerButton";
  * 양방향 바인딩
  *  입력값의 변화에 반응하고 변경된 값을 다시 입력값에 전달하는 방식
  */
-export default function Player({ initialName, symbol }) {
+export default function Player({ initialName, symbol, isActived }) {
 
   const [playerName, setPlayerName] = useState(initialName);
   const [isEditing, setIsEditing] = useState(false);
@@ -34,7 +34,7 @@ export default function Player({ initialName, symbol }) {
   }
 
   return (
-    <li>
+    <li className={isActived ? 'active' : undefined}>
       <span className="player">
         {playerNameElment}
         <span className="player-symbol">{symbol}</span>
